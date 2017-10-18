@@ -7,9 +7,6 @@ output [5:0] o_seg,
 output min
 );
 
-assign o_seg=segundos;
-assign min = minute;
-
 logic rst_timer;
 logic rst_segundos;
 logic rst_sum;
@@ -105,5 +102,6 @@ always_ff @ (posedge clk) begin
 		avrg <= average >>> 6;
 end
 
-
+assign o_seg=segundos;
+assign min = minute;
 endmodule 
