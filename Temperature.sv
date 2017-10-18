@@ -2,10 +2,12 @@ module Temperature (
 input rst,
 input clk,
 input [8:0] temperatura,
-output logic [8:0] avrg,
+output logic [10:0] avrg,
 output [5:0] o_seg,
 output min
 );
+
+
 
 logic rst_timer;
 logic rst_segundos;
@@ -21,6 +23,9 @@ logic [28:0] timer;
 logic [5:0] segundos;
 logic[7:0] test;
 logic [16:0] average;
+
+assign o_seg=segundos;
+assign min = minute;
 
 assign test = temperatura [7:0];
 FSM_SUM fsm_sum (
@@ -102,6 +107,5 @@ always_ff @ (posedge clk) begin
 		avrg <= average >>> 6;
 end
 
-assign o_seg=segundos;
-assign min = minute;
+
 endmodule 
