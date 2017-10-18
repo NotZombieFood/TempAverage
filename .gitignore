@@ -1,0 +1,6 @@
+db/*
+incremental_db/*
+work/*
+*.bak
+*.txt
+*.rar
