@@ -5,10 +5,10 @@ module test_temperature;
 	// Inputs
 	logic rst;
 	logic clk;
-	logic [7:0] temperatura;
+	logic [8:0] temperatura;
 
 	// Outputs
-	logic [7:0] promedio;
+	logic [8:0] promedio;
 
 	// Instantiate the Unit Under Test (UUT)
 	Temperature uut (

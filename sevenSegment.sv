@@ -1,5 +1,3 @@
-`timescale 1ns / 1ps
-
 module sevenSegment(
     input [5:0] switch,
     output logic [6:0] num0,
@@ -8,7 +6,7 @@ module sevenSegment(
    
    logic [3:0] unidades;
    logic [3:0] decenas;
-  always_comb begin
+  always @* begin
    if (switch >= 60) begin
      decenas = 6;
      unidades = switch-60;
@@ -44,7 +42,7 @@ module sevenSegment(
   end 
 end
 //always for  digit [0] in the first seven segment display
-  always_comb begin
+  always @* begin
     case (unidades)
       4'b0000: num0 = 7'b1000000; //0 
       4'b0001: num0 = 7'b1111001; //  1
@@ -60,7 +58,7 @@ end
 end
 
 //always for  digit [1] in the first seven segment display
-  always_comb begin
+  always @* begin
     case (decenas)
       4'b0000: num1 = 7'b1000000; //0 
       4'b0001: num1 = 7'b1111001; //  1
