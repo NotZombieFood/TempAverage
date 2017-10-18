@@ -138,7 +138,7 @@ LCD LCD(
 .RW(rw),
 .EN(en),
 .RS(rs),
-.ON(on),
+.ON(on)
 );
 
 endmodule 

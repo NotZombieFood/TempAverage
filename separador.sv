@@ -1,8 +1,8 @@
 module separador(
 input [8:0] promedio,
-output [3:0] centenas,
-output [3:0] decenas,
-output [3:0] unidades
+output logic [3:0] centenas,
+output logic [3:0] decenas,
+output logic [3:0] unidades
 );
 
 logic [3:0] int_decenas;
@@ -92,3 +92,5 @@ always_comb begin
 		unidades = int_decenas;
 	end
 end 
+
+endmodule // separador
